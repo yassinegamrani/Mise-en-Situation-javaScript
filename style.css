@@ -1,0 +1,16 @@
+:root {
+  --color-primary: #0f4c81; /* en-tête, bouton, focus */
+  --color-bg: #f5f7fa; /* fond de la page */
+  --color-surface: #ffffff; /* cartes, formulaire, champs */
+  --color-text: #1a2433; /* texte principal */
+  --color-muted: #5b6576; /* texte secondaire */
+  --color-border: #d9e0e8; /* bordures */
+  --color-error-bg: #fdecec; /* fond du message d'erreur (bonus) */
+  --color-error-text: #b42318; /* texte du message d'erreur (bonus) */
+
+  /* Police de la maquette : Inter (Google Fonts), ou une police système */
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+}

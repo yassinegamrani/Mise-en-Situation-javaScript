@@ -2,9 +2,12 @@ const API_URL = "https://countries.dev/countries";
 
 // Tous les pays reçus de l'API (rempli une seule fois, au chargement)
 let allCountries = [];
+console.log("zeze",allCountries);
+
 
 // TODO : récupère ici les éléments du DOM dont tu as besoin
-
+const countriesCarts= document.getElementById('countriesCarts')
+const searchInput = document.getElementById('searchInput')
 /**
  * Récupère tous les pays depuis l'API.
  * - Utilise fetch avec async/await.
@@ -12,10 +15,19 @@ let allCountries = [];
  *
  * @returns {Promise<Array>} Le tableau de tous les pays.
  */
-async function fetchCountries() {
-  // TODO
+ function fetchCountries() {
+  fetch(API_URL)
+  .then((Response)=>Response.json())
+  .then((data)=>{
+    console.log(data)
+    displayCountries(data)
+    allCountries.push(data)
+  })
+  .catch((error)=>{
+    console.log('une error dans le fetch!',error)
+  })
 }
-
+fetchCountries()
 /**
  * Crée la carte HTML d'un pays, sur le modèle de la maquette :
  * drapeau (avec un texte alternatif utile), nom, capitale, population.
@@ -24,7 +36,7 @@ async function fetchCountries() {
  * @returns {HTMLElement} La carte, prête à être ajoutée à la grille.
  */
 function createCountryCard(country) {
-  // TODO
+  
 }
 
 /**
@@ -36,7 +48,20 @@ function createCountryCard(country) {
  * @param {Array} countries - Les pays à afficher.
  */
 function displayCountries(countries) {
-  // TODO
+  for (let i = 0;i<countries.length;i++){
+    countriesCarts.innerHTML+=`<article>
+          <img src="${countries[i].flags.png}" alt="${countries[i].name}">
+          <h3>${countries[i].name}</h3>
+          <div style="display:flex; justify-content:space-between">
+            <p>Capitale</p>
+            <h5>${countries[i].capital}</h5>
+          </div>
+          <div style="display:flex; justify-content:space-between">
+            <p>Population</p>
+            <h5>${countries[i].population}</h5>
+          </div>
+        </article>`
+  }
 }
 
 /**
@@ -48,8 +73,16 @@ function displayCountries(countries) {
  * Aucune requête vers l'API ici !
  */
 function filterCountries() {
-  // TODO
+  let serchedTarget = []
+  searchInput.addEventListener('input',function(){
+    for(let i=0;i<allCountries.length;i++){
+      if(allCountries[i].name == searchInput.value){
+        serchedTarget.push(allCountries[i])
+      }
+    }console.log(serchedTarget)
+  })
 }
+filterCountries()
 
 
 // ------------------------------------------------------------

@@ -12,12 +12,53 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Si tu utilises un framework CSS (Bootstrap, Tailwind…), ajoute son lien ICI, AVANT style.css -->
     <link rel="stylesheet" href="style.css" />
+    <!-- <script src="https://cdn.tailwindcss.com/3.4.17"></script> -->
+
 
     <!-- defer : le script s'exécute une fois le HTML chargé -->
     <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header >
+      <h2>Atlas Voyages</h2>
+    </header>
+    <main>
+      <div id="headMain">
+        <h1>Explorer le monde</h1>
+        <p>Choisis un continent, parcours les pays et trouve ta prochaine destination.</p>
+      </div>
+      <form id="formPage">
+        <select name="countries" id="">
+          <option value="">Afrique</option>
+          <option value="">Europe</option>
+          <option value="">Asie</option>
+          <option value="">Amerique</option>
+        </select>
+        <label for="">Rechercher un pays</label>
+        <input id="searchInput" type="text">
+        <button id="" style="background-color: #0f4c81;"><i class="fa-solid fa-up-down"></i>Trier par population</button>
+      </form>
+      <section id="countriesCarts">
+        <!-- <article>
+          <img src="/images/download.png" alt="">
+          <h3>Morocco</h3>
+          <div>
+            <p>Capitale</p>
+            <h5>Rabat</h5>
+          </div>
+          <div>
+            <p>Population</p>
+            <h5>37 457 971</h5>
+          </div>
+        </article> -->
+      </section>
+    </main>
+    <footer>
+      <h6>© 2026 Atlas Voyages · Données : countries.dev</h6>
+    </footer>
+  </body>
 </html>

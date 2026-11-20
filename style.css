@@ -14,3 +14,37 @@
 body {
   font-family: "Inter", system-ui, sans-serif;
 }
+
+header {
+  background-color: #0f4c81;
+  padding: 15px;
+  color: white;
+  h2 {
+    margin-left: 100px;
+  }
+}
+main {
+  background-color: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  #headMain {
+    h1 {
+      margin-left: 100px;
+    }
+    p{
+      margin-left: 100px;
+    }
+  }
+  #formPage{
+    margin-left: 100px;
+    display: flex;
+    gap: 40px;
+    font-size: x-large;
+  }
+}
+#countriesCarts{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
